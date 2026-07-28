@@ -245,6 +245,8 @@
       box-shadow:0 4px 14px rgba(0,0,0,0.25);
     ">📲 Share Countdown on WhatsApp</button>
   </div>
+
+  <div style="padding:14px 24px 0; text-align:center;">
     <button id="calendarBtn" style="
       background:var(--green);
       color:#fff;
@@ -367,15 +369,12 @@
       "END:VCALENDAR"
     ].join("\r\n");
 
-    const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "kiuma-trip-to-the-west.ics";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    // Mobile-safe: navigate directly to a data URI rather than using a blob +
+    // download attribute, which gets blocked in mobile browsers and sandboxed
+    // previews. Direct navigation triggers the native "Add Event" screen on
+    // iOS/Android.
+    const dataUri = "data:text/calendar;charset=utf-8," + encodeURIComponent(icsContent);
+    window.location.href = dataUri;
   });
 
   document.getElementById('whatsappBtn').addEventListener('click', function(){
@@ -397,8 +396,10 @@
         `See the full countdown: ${window.location.href}`;
     }
 
+    // Mobile-safe: navigate directly rather than window.open, which mobile
+    // browsers and sandboxed previews often block as a popup.
     const url = "https://wa.me/?text=" + encodeURIComponent(body);
-    window.open(url, "_blank");
+    window.location.href = url;
   });
 </script>
 
