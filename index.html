@@ -231,7 +231,20 @@
     <div class="fee-pill">FEE: 70,000/=</div>
   </div>
 
-  <div style="padding:16px 24px 0; text-align:center;">
+  <div style="padding:14px 24px 0; text-align:center;">
+    <button id="whatsappBtn" style="
+      background:#25D366;
+      color:#fff;
+      border:none;
+      padding:12px 22px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:13px;
+      letter-spacing:0.5px;
+      cursor:pointer;
+      box-shadow:0 4px 14px rgba(0,0,0,0.25);
+    ">📲 Share Countdown on WhatsApp</button>
+  </div>
     <button id="calendarBtn" style="
       background:var(--green);
       color:#fff;
@@ -363,6 +376,29 @@
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+  });
+
+  document.getElementById('whatsappBtn').addEventListener('click', function(){
+    const now = new Date();
+    const diff = tripDate - now;
+    let body;
+
+    if (diff <= 0) {
+      body = "🎉 It's trip day! Kiuma Trip to the West is happening today — see you on the boat!";
+    } else {
+      const d = Math.floor(diff / (1000*60*60*24));
+      const h = Math.floor((diff / (1000*60*60)) % 24);
+      body =
+        `⏳ ${d} day${d===1?'':'s'} ${h} hr${h===1?'':'s'} to go!\n\n` +
+        `🚤 Kiuma Trip to the West\n` +
+        `📅 Saturday, 29th August 2026\n` +
+        `💰 Fee: 70,000/=\n\n` +
+        `Cruise the Kazinga Channel, Queen Elizabeth N.P., Katwe Salt Mines, Lake Rutoto & the Equator Monument.\n\n` +
+        `See the full countdown: ${window.location.href}`;
+    }
+
+    const url = "https://wa.me/?text=" + encodeURIComponent(body);
+    window.open(url, "_blank");
   });
 </script>
 
