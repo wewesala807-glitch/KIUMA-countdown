@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiuma Trip to the West — Countdown</title>
+
+<!-- Link preview image: this is what shows up large when the link is shared on WhatsApp, etc. -->
+<meta property="og:title" content="Kiuma Trip to the West — Saturday 29th August 2026">
+<meta property="og:description" content="Kazinga Channel Boat Cruise, Queen Elizabeth National Park, Katwe Salt Mines, Lake Rutoto & the Equator Monument. Fee: 70,000/=. Tap for a live countdown.">
+<meta property="og:image" content="kiuma-poster.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kiuma Trip to the West — Saturday 29th August 2026">
+<meta name="twitter:image" content="kiuma-poster.jpg">
+<style>
+  :root{
+    --cream:#f4efe4;
+    --navy:#152c4a;
+    --navy-deep:#0e2038;
+    --gold:#f2a91d;
+    --orange:#d9711f;
+    --green:#2f6b3f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--cream);
+    font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+    color:var(--navy);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  .card{
+    width:100%;
+    max-width:520px;
+    background:var(--navy);
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(14,32,56,0.35);
+    position:relative;
+  }
+  .route{
+    position:absolute;
+    top:18px; left:0; right:0;
+    height:26px;
+    opacity:0.5;
+  }
+  .header{
+    padding:34px 28px 18px;
+    text-align:center;
+    position:relative;
+  }
+  .eyebrow{
+    color:var(--gold);
+    letter-spacing:3px;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+  }
+  .title{
+    font-family:'Georgia',serif;
+    font-weight:900;
+    font-size:40px;
+    line-height:1.05;
+    margin-top:8px;
+    color:#fff;
+  }
+  .title .west{
+    display:block;
+    color:var(--gold);
+    font-style:italic;
+    font-family:'Brush Script MT', cursive, 'Georgia', serif;
+    font-size:48px;
+    margin-top:2px;
+  }
+  .datebar{
+    margin:20px 24px 0;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(242,169,29,0.3);
+    border-radius:14px;
+    padding:12px 16px;
+    text-align:center;
+    color:#e9e4d6;
+    font-size:14px;
+    letter-spacing:0.5px;
+  }
+  .datebar strong{color:var(--gold);}
+  .countdown{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    padding:26px 24px 8px;
+  }
+  .unit{
+    background:var(--navy-deep);
+    border-radius:14px;
+    padding:14px 4px;
+    text-align:center;
+    border:1px solid rgba(242,169,29,0.18);
+  }
+  .unit .num{
+    font-size:30px;
+    font-weight:800;
+    color:var(--gold);
+    font-variant-numeric:tabular-nums;
+  }
+  .unit .label{
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#c9c2ac;
+    margin-top:4px;
+  }
+  .message{
+    text-align:center;
+    padding:16px 24px 0;
+    color:#e9e4d6;
+    font-size:14px;
+  }
+  .message.arrived{
+    font-size:20px;
+    font-weight:800;
+    color:var(--gold);
+  }
+  .divider{
+    margin:22px 24px 0;
+    height:1px;
+    background:linear-gradient(90deg,transparent,rgba(242,169,29,0.4),transparent);
+  }
+  .fee-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:18px 24px 0;
+  }
+  .fee-pill{
+    background:var(--gold);
+    color:var(--navy-deep);
+    font-weight:800;
+    font-size:14px;
+    padding:8px 16px;
+    border-radius:999px;
+  }
+  .sites{
+    padding:20px 24px 4px;
+  }
+  .sites-title{
+    color:var(--green);
+    background:#fff;
+    display:inline-block;
+    padding:4px 12px;
+    border-radius:8px;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .site-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .site-chip{
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.12);
+    color:#e9e4d6;
+    font-size:12px;
+    padding:7px 12px;
+    border-radius:999px;
+  }
+  .footer{
+    background:var(--cream);
+    padding:20px 24px 26px;
+    text-align:center;
+  }
+  .footer .tagline{
+    color:var(--orange);
+    font-style:italic;
+    font-weight:700;
+    font-size:15px;
+  }
+  .contacts{
+    margin-top:14px;
+    display:flex;
+    justify-content:center;
+    gap:28px;
+    font-size:12px;
+    line-height:1.6;
+    color:var(--navy);
+    text-align:left;
+  }
+  .contacts b{display:block;color:var(--green);font-size:11px;letter-spacing:1px;margin-bottom:2px;}
+  @media (max-width:380px){
+    .title{font-size:32px;}
+    .title .west{font-size:38px;}
+    .unit .num{font-size:24px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <img src="kiuma-poster.jpg" alt="Kiuma Trip to the West poster" style="width:100%; display:block;">
+  <div class="header">
+    <div class="eyebrow">Explore · Discover · Experience</div>
+    <div class="title">Kiuma Trip
+      <span class="west">to the West</span>
+    </div>
+  </div>
+
+  <div class="datebar">
+    Departing <strong>Saturday, 29th August 2026</strong>
+  </div>
+
+  <div class="countdown" id="countdown">
+    <div class="unit"><div class="num" id="days">--</div><div class="label">Days</div></div>
+    <div class="unit"><div class="num" id="hours">--</div><div class="label">Hours</div></div>
+    <div class="unit"><div class="num" id="mins">--</div><div class="label">Mins</div></div>
+    <div class="unit"><div class="num" id="secs">--</div><div class="label">Secs</div></div>
+  </div>
+
+  <div class="message" id="message">until we cruise the Kazinga Channel</div>
+
+  <div class="divider"></div>
+
+  <div class="fee-row">
+    <div class="fee-pill">FEE: 70,000/=</div>
+  </div>
+
+  <div style="padding:16px 24px 0; text-align:center;">
+    <button id="calendarBtn" style="
+      background:var(--green);
+      color:#fff;
+      border:none;
+      padding:12px 22px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:13px;
+      letter-spacing:0.5px;
+      cursor:pointer;
+      box-shadow:0 4px 14px rgba(0,0,0,0.25);
+    ">📅 Add to Calendar + Reminders</button>
+    <div style="color:#a9a290; font-size:11px; margin-top:8px;">
+      Adds a reminder every 2 days until trip day, plus a final one 2 hours before departure — these fire from your calendar app itself, so they'll reach you even if you never open this page again.<br>
+      Works fully in Apple Calendar &amp; Outlook. Google Calendar only keeps one default reminder per event (a Google limitation).
+    </div>
+  </div>
+
+  <div class="sites">
+    <div class="sites-title">Sites to visit</div>
+    <div class="site-list">
+      <span class="site-chip">Kazinga Channel Cruise</span>
+      <span class="site-chip">Queen Elizabeth N.P.</span>
+      <span class="site-chip">Katwe Salt Mines</span>
+      <span class="site-chip">Lake Munyanyange</span>
+      <span class="site-chip">Lake Rutoto</span>
+      <span class="site-chip">Equator Monument</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="tagline">One trip. Many memories.</div>
+    <div class="contacts">
+      <div><b>Males</b>0753073092<br>Mukoti Abdul Wahab</div>
+      <div><b>Females</b>+256708911546<br>Nakimuli Shaluwah<br>0765987978<br>Namawanda Naspher</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Trip date/time — adjust the time if you confirm an exact departure hour
+  const tripDate = new Date("2026-08-29T06:00:00");
+
+  function updateCountdown(){
+    const now = new Date();
+    const diff = tripDate - now;
+
+    if (diff <= 0){
+      document.getElementById('countdown').style.display = 'none';
+      const msg = document.getElementById('message');
+      msg.textContent = "🎉 It's trip day — see you on the boat!";
+      msg.classList.add('arrived');
+      return;
+    }
+
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff / (1000*60*60)) % 24);
+    const mins = Math.floor((diff / (1000*60)) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
+
+    document.getElementById('days').textContent = days;
+    document.getElementById('hours').textContent = String(hours).padStart(2,'0');
+    document.getElementById('mins').textContent = String(mins).padStart(2,'0');
+    document.getElementById('secs').textContent = String(secs).padStart(2,'0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Build a downloadable .ics file with built-in reminder alarms.
+  // These alerts fire from the person's own calendar app — no server needed,
+  // and they'll still go off even if this page is never revisited.
+  document.getElementById('calendarBtn').addEventListener('click', function(){
+    const dtStart = "20260829T060000";
+    const dtEnd   = "20260829T180000";
+    const tripDateObj = new Date("2026-08-29T08:00:00");
+
+    // Build a reminder every 2 days from today until the trip, at 8am each day.
+    const now = new Date();
+    const alarms = [];
+    let cursor = new Date(now);
+    cursor.setHours(8,0,0,0);
+    if (cursor <= now) cursor.setDate(cursor.getDate() + 1); // start from next 8am if already past
+
+    while (cursor < tripDateObj) {
+      const daysLeft = Math.ceil((tripDateObj - cursor) / (1000*60*60*24));
+      const stamp = cursor.toISOString().replace(/[-:]/g,'').split('.')[0] + "Z";
+      alarms.push(
+        "BEGIN:VALARM",
+        "TRIGGER;VALUE=DATE-TIME:" + stamp,
+        "ACTION:DISPLAY",
+        "DESCRIPTION:" + daysLeft + " day" + (daysLeft === 1 ? "" : "s") + " until Kiuma Trip to the West!",
+        "END:VALARM"
+      );
+      cursor = new Date(cursor.getTime() + 2*24*60*60*1000); // +2 days
+    }
+    // Final day-of alarm
+    alarms.push(
+      "BEGIN:VALARM",
+      "TRIGGER:-PT2H",
+      "ACTION:DISPLAY",
+      "DESCRIPTION:Kiuma Trip to the West departs in 2 hours!",
+      "END:VALARM"
+    );
+
+    const icsContent = [
+      "BEGIN:VCALENDAR",
+      "VERSION:2.0",
+      "PRODID:-//Kiuma Trip//Countdown//EN",
+      "BEGIN:VEVENT",
+      "UID:" + Date.now() + "@kiuma-trip",
+      "DTSTAMP:" + new Date().toISOString().replace(/[-:]/g,'').split('.')[0] + "Z",
+      "DTSTART:" + dtStart,
+      "DTEND:" + dtEnd,
+      "SUMMARY:Kiuma Trip to the West",
+      "DESCRIPTION:Kazinga Channel Boat Cruise\\, Queen Elizabeth National Park\\, Katwe Salt Mines\\, Lake Munyanyange\\, Lake Rutoto\\, Equator Monument - Kasese. Fee: 70\\,000/=. Contacts - Males: Mukoti Abdul Wahab 0753073092\\, Females: Nakimuli Shaluwah +256708911546 / Namawanda Naspher 0765987978.",
+      "LOCATION:Kasese Region\\, Uganda",
+      ...alarms,
+      "END:VEVENT",
+      "END:VCALENDAR"
+    ].join("\r\n");
+
+    const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "kiuma-trip-to-the-west.ics";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+</script>
+
+</body>
+</html>
